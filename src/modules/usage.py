@@ -2,7 +2,8 @@ import psutil
 
 class Usage:
     def get_cpu_usage():
-        return f"CPU Usage %: {psutil.cpu_percent()}"
+        perc_usage = "{0:.3f}".format(100.0 - psutil.cpu_times_percent(interval=0.4, percpu=False).idle)
+        return f"CPU Usage %: {perc_usage}"
 
     def get_memory_usage():
         virtual_mem = psutil.virtual_memory()
