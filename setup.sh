@@ -23,8 +23,8 @@ fi
 source env/bin/activate
 
 psu=$(python3 -m pip list | grep psutil)
-if echo $psu | grep -q "psutil" then
-    echo "requirement satisfied"
+if echo $psu | grep -q "psutil"
+    then echo "requirement satisfied"
 else
     python3 -m pip install -r requirements.txt
 fi
