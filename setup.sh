@@ -22,7 +22,7 @@ fi
 
 source env/bin/activate
 
-psu=$(python3 -m pip list | grep psutil)
+psu=$(python3 -m pip list --disable-pip-version-check | grep psutil)
 if echo $psu | grep -q "psutil"
     then echo "requirement satisfied"
 else
@@ -31,6 +31,7 @@ fi
 
 # ${arg} - argument provided while initializing
 # a build from jenkins
-
-python3 src/__init__.py ${arg}
+opts=${arg}
+echo "provided option: ${opts}"
+python3 src/__init__.py $(opts)
 
