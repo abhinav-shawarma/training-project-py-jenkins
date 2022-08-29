@@ -33,5 +33,5 @@ fi
 # a build from jenkins
 opts=${arg}
 echo "provided option: ${opts}"
-python3 src/__init__.py $(opts)
+python3 src/__init__.py $opts
 
